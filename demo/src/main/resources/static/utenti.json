@@ -1,0 +1,100 @@
+[ {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manuel",
+  "token" : "9+10X+7U3MkpBIS4br5yMnIqnsivYczfsQ3aPKyMPv0="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "andrea",
+  "token" : "HGPIUdlOkSD9D7chJQSUXLMiLQrk5SwSj5sSDHIKSBE="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manup",
+  "token" : "6mV0yziowsACyhYBOxKrenFTSyzGRWTf15x+9JOXZ0c="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manu",
+  "token" : "10HOnyVrOT8nO0u71YXs8K3quzwOwLCZneldwJ3uPHc="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "aaa",
+  "rubrica" : [ ],
+  "username" : "manul",
+  "token" : "mBux2PEdS7ZeIijRI2BhMBeOhFMgZZ3V9dJNliolN8o="
+}, {
+  "password" : "mp",
+  "rubrica" : [ ],
+  "username" : "mp",
+  "token" : "JGSLrDkiwfcYkgG+IFSmxjZ6Rp7P4Vsef6YLMEO8Gps="
+}, {
+  "password" : "mp",
+  "rubrica" : [ ],
+  "username" : "mp",
+  "token" : "JGSLrDkiwfcYkgG+IFSmxjZ6Rp7P4Vsef6YLMEO8Gps="
+}, {
+  "password" : "mp",
+  "rubrica" : [ ],
+  "username" : "mp",
+  "token" : "JGSLrDkiwfcYkgG+IFSmxjZ6Rp7P4Vsef6YLMEO8Gps="
+}, {
+  "password" : "mp",
+  "rubrica" : [ ],
+  "username" : "mp",
+  "token" : "JGSLrDkiwfcYkgG+IFSmxjZ6Rp7P4Vsef6YLMEO8Gps="
+}, {
+  "password" : "mp",
+  "rubrica" : [ {
+    "id" : 1,
+    "nome" : "ari",
+    "cognome" : "sebe",
+    "numeroTelefono" : "1234",
+    "gruppo" : "prova"
+  }, {
+    "id" : 2,
+    "nome" : "a",
+    "cognome" : "a",
+    "numeroTelefono" : "12345",
+    "gruppo" : "prova"
+  }, {
+    "id" : 3,
+    "nome" : "manu",
+    "cognome" : "p",
+    "numeroTelefono" : "123",
+    "gruppo" : "ciao"
+  }, {
+    "id" : 4,
+    "nome" : "manuel",
+    "cognome" : "provenzi",
+    "numeroTelefono" : "34444",
+    "gruppo" : ""
+  } ],
+  "username" : "mp",
+  "token" : "JGSLrDkiwfcYkgG+IFSmxjZ6Rp7P4Vsef6YLMEO8Gps="
+} ]
