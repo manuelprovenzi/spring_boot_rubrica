@@ -12,7 +12,7 @@ The result varies depending on the type of request.
 The service offers the following functions:
 
 ### 1. Registration
-- **Endpoint:** `regist.php`
+- **Endpoint:** `regist`
 - **Description:** Allows users to register with a username and password.
 - **Parameters (GET):**
   - `username` (string)
@@ -21,7 +21,7 @@ The service offers the following functions:
   - If the parameters are incorrect or the user already exists, an "error" is returned with the corresponding message.
 
 ### 2. Token Retrieval
-- **Endpoint:** `getToken.php`
+- **Endpoint:** `getToken`
 - **Description:** Allows users to retrieve the token for subsequent requests.
 - **Parameters (GET):**
   - `username` (string)
@@ -32,7 +32,7 @@ The service offers the following functions:
   - Each time a new token is generated, the previous token is deleted.
 
 ### 3. Add Contact
-- **Endpoint:** `addContact.php`
+- **Endpoint:** `addContact`
 - **Description:** Allows users to add a contact to the address book.
 - **Parameters (GET):**
   - `token` (string)
@@ -44,7 +44,7 @@ The service offers the following functions:
   - If the parameters are incorrect, an "error" is returned with the corresponding message.
 
 ### 4. Delete Contact
-- **Endpoint:** `deleteContact.php`
+- **Endpoint:** `deleteContact`
 - **Description:** Allows users to delete a contact.
 - **Parameters (GET):**
   - `token` (string)
@@ -55,7 +55,7 @@ The service offers the following functions:
   - If the parameters are incorrect or the contact does not exist, an "error" is returned with the corresponding message.
 
 ### 5. Get Groups
-- **Endpoint:** `getGroups.php`
+- **Endpoint:** `getGroups`
 - **Description:** Returns the list of all groups present in the address book. If two contacts have the same group, the group name will appear only once in this list.
 - **Parameters (GET):**
   - `token` (string)
@@ -63,7 +63,7 @@ The service offers the following functions:
   - If the parameters are incorrect, an "error" is returned with the corresponding message.
 
 ### 6. Get Contacts
-- **Endpoint:** `getContacts.php`
+- **Endpoint:** `getContacts`
 - **Description:** Returns the list of all contacts present in the address book, with their respective IDs (necessary for deletion).
 - **Parameters (GET):**
   - `token` (string)
