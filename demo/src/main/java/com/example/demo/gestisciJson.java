@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 
 public class gestisciJson {
 
-    static String path = "demo/src/main/resources/static/utenti.json";
+    static String path = System.getProperty("user.dir") + "/demo/src/main/resources/static/utenti.json";
 
     static Utente searchContatto(String user, String psw) {
         File jsonFile = new File(path);
