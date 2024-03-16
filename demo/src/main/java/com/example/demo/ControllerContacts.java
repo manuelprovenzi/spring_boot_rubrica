@@ -20,7 +20,7 @@ public class ControllerContacts {
                             @RequestParam(value = "nome", defaultValue = "") String nome,
                             @RequestParam(value = "cognome", defaultValue = "") String cognome,
                             @RequestParam(value = "numero", defaultValue = "") String numero,
-                            @RequestParam(value = "gruppo", defaultValue = "null") String gruppo) {
+                            @RequestParam(value = "gruppo", required=false) String gruppo) {
         
         Utente u = staticAttributes.utenteAttivo;
         

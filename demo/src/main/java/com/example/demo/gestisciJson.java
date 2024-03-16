@@ -17,7 +17,7 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 
 public class gestisciJson {
 
-    static String path = "demo/src/main/resources/static/utenti.json";
+    static String path = "demo/utenti.json";
 
     static Utente searchContatto(String user, String psw) {
         File jsonFile = new File(path);
@@ -158,40 +158,3 @@ public class gestisciJson {
         return true;
     }
 }
-
-class ContattiWrapper {
-    private List<Contatto> contatti;
-
-    public List<Contatto> getContatti() {
-        return contatti;
-    }
-
-    public void setContatti(List<Contatto> contatti) {
-        this.contatti = contatti;
-    }
-
-    // Costruttore senza argomenti
-    public ContattiWrapper() {
-    }
-}
-
-/*
- *
- * u = new Utente(username, password, token, null);
- *
- * // Parsing dei contatti
- * JsonNode rubricaNode = userNode.get("rubrica");
- * List<Contatto> contattoList = new ArrayList<>();
- * if (rubricaNode != null) {
- * ArrayNode contattiArray = (ArrayNode) rubricaNode.get("contatti");
- * for (JsonNode contattoNode : contattiArray) {
- * String nome = contattoNode.get("nome").asText();
- * String telefono = contattoNode.get("telefono").asText();
- * String cognome = contattoNode.get("cognome").asText();
- * String gruppo = contattoNode.get("gruppo").asText();
- * Contatto contatto = new Contatto(nome, cognome, telefono, gruppo);
- * contattoList.add(contatto);
- * }
- * }
- * u.setRubrica(contattoList);
- */
