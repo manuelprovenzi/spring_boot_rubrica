@@ -75,11 +75,12 @@ public class gestisciJson {
                 ArrayNode contattiArray = (ArrayNode) rubricaNode.get("rubrica");
                 if( contattiArray != null){
                     for (JsonNode contattoNode : contattiArray) {
+                        Integer id = Integer.parseInt(contattoNode.get("id").asText());
                         String nome = contattoNode.get("nome").asText();
                         String numero = contattoNode.get("numero").asText();
                         String cognome = contattoNode.get("cognome").asText();
                         String gruppo = contattoNode.get("gruppo").asText();
-                        Contatto contatto = new Contatto(nome, cognome, numero, gruppo);
+                        Contatto contatto = new Contatto(id,nome, cognome, numero, gruppo);
                         rubrica.add(contatto);
                     }
                 }
