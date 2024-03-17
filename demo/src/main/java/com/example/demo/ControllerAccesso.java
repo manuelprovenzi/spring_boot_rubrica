@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,20 +16,39 @@ public class ControllerAccesso {
     //Parametri GET:
     //- username ( string )
     //- password ( string )
-    //http://localhost:8080/regist?username=manul&password=aaa
+    //http://localhost:8080/regist?username=manulp&password=aaa
     @GetMapping("/regist")
     public Map<String,String> getMethodName(@RequestParam(value = "username", defaultValue = "") String username,
                                 @RequestParam(value = "password", defaultValue = "") String password) {
         
         //controlla se utente gia presente (status error), altrimenti lo registra
-        Utente u = gestisciJson.searchContatto(username, password);
+        gestisciDB db = null;
+        try {
+            db = new gestisciDB();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return Map.of("status", "error", "message", "Errore nel sistema");
+        }
+
+        Utente u = null;
+        try {
+            u = db.searchUtente(username, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         if(u != null) {
             Map<String, String> map = Map.of("status", "error", "message", "Utente gia presente");
             return map;
         }
         else {
-            u = gestisciJson.addUser(username, password);
-            if(u==null){
+            boolean b = false;
+            try {
+                b = db.addUser(username, password);
+            } catch (SQLException e) {
+
+                e.printStackTrace();
+            }
+            if(b==false){
                 Map<String, String> map = Map.of("status", "error", "message", "Errore nel sistema");
                 return map;
             }
@@ -48,14 +68,39 @@ public class ControllerAccesso {
     public Map<String,Object> getToken(@RequestParam(value = "username", defaultValue = "") String username,
                             @RequestParam(value = "password", defaultValue = "") String password) {
         
-        
-        Utente u = gestisciJson.searchContatto(username, password);
+        gestisciDB db = null;
+        try {
+            db = new gestisciDB();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return Map.of("status", "error", "message", "Errore nel sistema1");
+        }
+        Utente u = null;
+        try {
+            u = db.searchUtente(username, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         if(u != null) {
             if(u.getToken()==null){
-                u.setToken(gestisciJson.generateToken());
+                String token = null;
+                try {
+                    token = db.createToken(u.getUsername());
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    return Map.of("status", "error", "message", "Errore nel sistema2");
+                }
+                System.out.println(token);
+
+                if(token!=null){
+                    u.setToken(token);
+                }
+                else{
+                    Map<String, Object> map = Map.of("status", "error", "message", "Errore nella generazione del token");
+                    return map;
+                }
             }
-            staticAttributes.token=u.getToken();
-            staticAttributes.utenteAttivo= u;
             Map<String,String> mapToken = new HashMap<>();
             mapToken.put("token", u.getToken());
             
