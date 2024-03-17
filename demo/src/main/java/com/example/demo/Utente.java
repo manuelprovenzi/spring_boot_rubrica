@@ -52,6 +52,10 @@ public class Utente {
         this.rubrica = rubrica;
     }
 
+    public void deleteContact(Contatto c){
+        this.rubrica.remove(c);
+    }
+
     //[null,"abc"]
     public List<String> getGruppi(){
         List<String> gruppi = new ArrayList<>();
