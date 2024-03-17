@@ -39,3 +39,14 @@ public class gestisciDB {
     }
 
 }
+
+/*
+    TODO:
+    static Utente searchContatto(String user, String psw)
+    static Utente searchContatto(String token)
+    public static List<Map<String, Object>> parseJson(File jsonFile) throws Exception
+    static Utente addUser(String user, String psw)
+    public static String generateToken()
+    private static void saveListToJsonFile(List<Map<String, Object>> list)
+    public static boolean updateUser(Utente u)
+ */
