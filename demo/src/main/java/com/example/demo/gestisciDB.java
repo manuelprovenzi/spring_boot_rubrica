@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class gestisciDB {
@@ -38,11 +40,33 @@ public class gestisciDB {
         }
     }
 
+    public Utente searchUtente(String user, String psw) throws SQLException {
+        PreparedStatement stat = conn.prepareStatement("select * from utenti where username=? and password=md5(?)");
+        stat.setString(1, user);
+        stat.setString(2, psw);
+        ResultSet rs = stat.executeQuery();
+        if(rs.next()){
+            Utente u = new Utente(rs.getString("username"),rs.getString("password"), rs.getString("token"), null);
+            PreparedStatement statContatti = conn.prepareStatement("select * from contatti where usernameUtente=?");
+            statContatti.setString(1, user);
+            ResultSet rsContatti = statContatti.executeQuery();
+            List<Contatto> contatti = new ArrayList<>();
+            while(rsContatti.next()){
+                Contatto c = new Contatto(rsContatti.getString("nome"), rsContatti.getString("cognome"), rsContatti.getString("telefono"), rsContatti.getString("gruppo"));
+                contatti.add(c);
+            }
+            u.setRubrica(contatti);
+
+            return u;
+        }
+        return null;
+    }
+
 }
 
 /*
     TODO:
-    static Utente searchContatto(String user, String psw)
+    -! static Utente searchContatto(String user, String psw)
     static Utente searchContatto(String token)
     public static List<Map<String, Object>> parseJson(File jsonFile) throws Exception
     static Utente addUser(String user, String psw)
