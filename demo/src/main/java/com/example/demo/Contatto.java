@@ -8,19 +8,14 @@ public class Contatto {
     private String gruppo;
     
     // Constructor
-    public Contatto(String nome, String cognome, String numeroTelefono, String gruppo) {
-        this.id = generateNextId(); // assegna il prossimo ID autoincrementale
+    public Contatto(int id,String nome, String cognome, String numeroTelefono, String gruppo) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.numeroTelefono = numeroTelefono;
         this.gruppo = gruppo;
     }
     
-    // Metodo statico per generare il prossimo ID autoincrementale
-    private static int generateNextId() {
-        staticAttributes.lastId++; // incrementa l'ultimo ID assegnato
-        return staticAttributes.lastId; // restituisce il nuovo ID
-    }
     
     // Getters and Setters
     public int getId() {
