@@ -54,6 +54,7 @@ public class gestisciDB {
             while(rsContatti.next()){
                 Contatto c = new Contatto(rsContatti.getString("nome"), rsContatti.getString("cognome"), rsContatti.getString("telefono"), rsContatti.getString("gruppo"));
                 contatti.add(c);
+                //TODO:aggiungi Id nel contatto
             }
             u.setRubrica(contatti);
 
