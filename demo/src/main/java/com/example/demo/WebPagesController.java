@@ -17,9 +17,15 @@ public class WebPagesController { //gestire le chiamate fatte per ritornare html
     }
 
     //@GetMapping("/hello") stessa cosa di questo sotto
-    @GetMapping("/hello2.html") 
-    public String hellov2(@RequestParam(value="nome") String nome){
-        //http://localhost:8080/hello2.html?nome=pippo  
-        return "<b>ciao"+nome+"</b>"; // ->pagina dinamica
+    @GetMapping("/hellow.html") 
+    public String hellow(@RequestParam(value="token") String token){
+        //http://localhost:8080/hellow.html
+        if(token=="valido"){
+            return "saluta"; // ->corrisponde al nome del file contenuto in template
+        }
+        else{
+            return "login";
+        }
+        
     }
 }
